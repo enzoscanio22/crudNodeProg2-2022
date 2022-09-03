@@ -10,12 +10,12 @@ class DeleteUserController {
     try {
       await deleteUserService.delete(id).then(() => {
         response.render("message", {
-          message: "Usuário deletado com sucesso"
+          message: "Usuario eliminado exitosamente."
         });
       });
     } catch (err) {
       response.render("message", {
-        message: `Erro ao deletar usuário: ${err.message}`
+        message: `Error al eliminar usuario: ${err.message}`
       });
     }
   }

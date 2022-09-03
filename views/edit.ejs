@@ -58,11 +58,11 @@
       <br>
       <div class="row">
         <div class="col-6">
-          <label for="email" class="form-label">Email</label>
+          <label for="email" class="form-label">E-mail</label>
           <input type="text" name="email" id="email" class="form-control" value="<%= user.email %>">
         </div>
         <div class="col-6">
-          <label for="telefone" class="form-label">Telefono</label>
+          <label for="telefone" class="form-label">Teléfono</label>
           <input type="text" name="telefone" id="telefone" class="form-control" value="<%= user.telefone %>">
         </div>
       </div>
@@ -73,10 +73,9 @@
           <input type="text" name="cidade" id="cidade" class="form-control" value="<%= user.cidade %>">
         </div>
         <div class="col-6">
-          <label for="estado" class="form-label">Estado</label>
+          <label for="estado" class="form-label">Provincia</label>
           <select name="estado" id="estado" class="form-select">
-            <option value="<%= user.estado %>" selected>
-              <%= user.estado %>
+
             </option>
             <option value="MDZ">Mendoza</option>
             <option value="BA">Buenos Aires</option>
@@ -90,14 +89,14 @@
       </div>
       <br>
       <div class="row">
-        <div class="col-6">
-          <div class="float-start">
-            <button type="submit" class="btn primary-btn">Atualizar usuário</button>
+        <div class="col-12">
+          <div class="float-end">
+            <button type="submit" class="btn primary-btn">Atualizar usuario</button>
           </div>
         </div>
-        <div class="col-6">
-          <div class="float-end">
-            <a href="./" class="btn secondary-btn">Voltar à home</a>
+        <div class="col-md-5">
+          <div class="float-start">
+            <a href="./" class="btn secondary-btn">Volver a Home</a>
           </div>
         </div>
       </div>
