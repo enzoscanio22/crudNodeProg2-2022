@@ -1,5 +1,5 @@
 function counter() {
-  let countdown = 3;
+  let countdown = 5;
 
   let timerDiv = document.getElementById("timer");
 
