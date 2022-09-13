@@ -1,32 +1,32 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 
-@Entity("users")
-class User {
+@Entity("usuarios")
+class Usuario {
 
   @PrimaryColumn()
   id: string;
 
   @Column()
-  username: string;
+  nombreUsuario: string;
 
   @Column()
-  email: string;
+  eMail: string;
 
   @Column()
-  telefone: string;
+  teléfono: string;
 
   @Column()
-  cidade: string;
+  ciudad: string;
 
   @Column()
-  estado: string;
+  provincia: string;
 
   @CreateDateColumn()
-  created_at: Date;
+  fechaCreacion: Date;
 
   @UpdateDateColumn()
-  updated_at: Date;
+  fechaModificacion: Date;
 
   constructor() {
     if (!this.id) {
@@ -36,4 +36,4 @@ class User {
 
 }
 
-export { User };
+export { Usuario };

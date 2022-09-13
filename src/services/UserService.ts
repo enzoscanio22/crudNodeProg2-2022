@@ -1,37 +1,37 @@
 import { getCustomRepository } from "typeorm";
 import { UsersRepository } from "../repositories/UsersRepository";
-import { User } from "../entities/User";
+import { Usuario } from "../entities/User";
 
 interface IUser {
   id?: string
-  username: string;
-  email: string;
-  telefone: string;
-  cidade: string;
-  estado: string;
+  nombreUsuario: string;
+  eMail: string;
+  teléfono: string;
+  ciudad: string;
+  provincia: string;
 }
 
 class UserService{
-    async create({ username, email, telefone, cidade, estado }: IUser) {
-        if (!username || !email || !telefone || !cidade || !estado) {
-          throw new Error("Por favor rellena todos los campos");
+    async create({ nombreUsuario, eMail, teléfono, ciudad, provincia }: IUser) {
+        if (!nombreUsuario || !eMail || !teléfono || !ciudad || !provincia) {
+          throw new Error("Por favor rellene todos los campos");
         }
     
         const usersRepository = getCustomRepository(UsersRepository);
     
-        const usernameAlreadyExists = await usersRepository.findOne({ username });
+        const usernameAlreadyExists = await usersRepository.findOne({ nombreUsuario });
     
         if (usernameAlreadyExists) {
           throw new Error("El nombre de usuario ya está registrado");
         }
     
-        const emailAlreadyExists = await usersRepository.findOne({ email });
+        const emailAlreadyExists = await usersRepository.findOne({ eMail });
     
         if (emailAlreadyExists) {
-          throw new Error("Email ya está registrado");
+          throw new Error("El eMail que selecciono ya está registrado");
         }
     
-        const user = usersRepository.create({ username, email, telefone, cidade, estado });
+        const user = usersRepository.create({ nombreUsuario, eMail, teléfono, ciudad, provincia });
     
         await usersRepository.save(user);
     
@@ -45,7 +45,7 @@ class UserService{
         const user = await usersRepository
           .createQueryBuilder()
           .delete()
-          .from(User)
+          .from(Usuario)
           .where("id = :id", { id })
           .execute();
     
@@ -77,23 +77,23 @@ class UserService{
     
         const user = await usersRepository
           .createQueryBuilder()
-          .where("username like :search", { search: `%${search}%` })
-          .orWhere("email like :search", { search: `%${search}%` })
-          .orWhere("telefone like :search", { search: `%${search}%` })
-          .orWhere("cidade like :search", { search: `%${search}%` })
-          .orWhere("estado like :search", { search: `%${search}%` })
+          .where("nombreUsuario like :search", { search: `%${search}%` })
+          .orWhere("eMail like :search", { search: `%${search}%` })
+          .orWhere("teléfono like :search", { search: `%${search}%` })
+          .orWhere("ciudad like :search", { search: `%${search}%` })
+          .orWhere("provincia like :search", { search: `%${search}%` })
           .getMany();
     
         return user;
       }
 
-      async update({ id, username, email, telefone, cidade, estado }: IUser) {
+      async update({ id, nombreUsuario, eMail, teléfono, ciudad, provincia }: IUser) {
         const usersRepository = getCustomRepository(UsersRepository);
     
         const user = await usersRepository
           .createQueryBuilder()
-          .update(User)
-          .set({ username, email, telefone, cidade, estado })
+          .update(Usuario)
+          .set({ nombreUsuario, eMail, teléfono, ciudad, provincia })
           .where("id = :id", { id })
           .execute();
     

@@ -64,27 +64,27 @@
         <% users.forEach(function(user) { %>
           <tr>
             <td>
-              <%= user.username %>
+              <%= user.nombreUsuario %>
             </td>
             <td>
-              <%= user.email %>
+              <%= user.eMail %>
             </td>
             <td>
-              <%= user.telefone %>
+              <%= user.teléfono %>
             </td>
             <td>
-              <%= user.cidade %>
+              <%= user.ciudad %>
             </td>
             <td>
-              <%= user.estado %>
+              <%= user.provincia %>
             </td>
             <td>
-              <%= user.created_at.toLocaleDateString() %>
-                <%= user.created_at.toLocaleTimeString() %>
+              <%= user.fechaCreacion.toLocaleDateString() %>
+                <%= user.fechaCreacion.toLocaleTimeString() %>
             </td>
             <td>
-              <%= user.updated_at.toLocaleDateString() %>
-                <%= user.updated_at.toLocaleTimeString() %>
+              <%= user.fechaModificacion.toLocaleDateString() %>
+                <%= user.fechaModificacion.toLocaleTimeString() %>
             </td>
             <td>
               <div class="row">
