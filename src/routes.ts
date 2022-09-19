@@ -22,7 +22,7 @@ router.get("/edit", userController.handleGetUserDataController.bind(userControll
 
 router.post("/edit-user", userController.handleUpdateUserController.bind(userController));
 
-router.post("/delete-producto", userController.handleDeleteUserService.bind(userController));
+router.post("/delete-user", userController.handleDeleteUserService.bind(userController));
 
 
 router.post("/add-producto", productoController.handleProductoController.bind(productoController));

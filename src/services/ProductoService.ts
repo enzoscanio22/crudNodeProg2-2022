@@ -23,11 +23,11 @@ class ProductoService{
           throw new Error("El nombre del producto seleccionado ya está registrado");
         }
     
-        const descripciónAlreadyExists = await productosRepository.findOne({ descripción });
+        // const descripciónAlreadyExists = await productosRepository.findOne({ descripción });
     
-        if (descripciónAlreadyExists) {
-          throw new Error("La descripcion que selecciono ya está registrado");
-        }
+        // if (descripciónAlreadyExists) {
+        //   throw new Error("La descripcion que selecciono ya está registrado");
+        // }
     
         const producto = productosRepository.create({ nombreProducto, descripción, precio });
     
