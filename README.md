@@ -11,6 +11,6 @@ CRUD made with Node.js, Express, TypeScript, TypeORM, EJS &amp; SQLite.
 - Run `yarn dev` to start the server.
 - The CRUD will be avaiable at `http://localhost:3000`.
 
-npm install --location=local
-npm run typeorm migration:run
-npm run dev
+- npm install --location=local
+- npm run typeorm migration:run
+- npm run dev
