@@ -30,7 +30,7 @@ export class CreateProductos1624747881678 implements MigrationInterface {
                         default: "now()"
                     },
                     {
-                        name: "fechaActualizacion",
+                        name: "fechaModificacion",
                         type: "timestamp",
                         default: "now()"
                     }

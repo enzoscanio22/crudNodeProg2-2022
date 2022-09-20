@@ -8,7 +8,7 @@ const userController = new UserController();
 const productoController = new ProductoController();
 
 router.get("/", userController.handleListUsersController.bind(userController));
-router.get("/", productoController.handleListProductosController.bind(productoController))
+router.get("./viewsProducto/indexProducto", productoController.handleListProductosController.bind(productoController))
 
 router.get("/add", (request, response) => {
   response.render("add");

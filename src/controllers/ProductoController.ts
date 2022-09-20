@@ -55,13 +55,10 @@ class ProductoController {
 
       async handleListProductosController(request: Request, response: Response) {
     
-        const productos
-       = await this.service.list();
+        const productos = await this.service.list();
     
-        return response.render("index", {
-          productos
-        : productos
-        
+        return response.render("./viewsProducto/indexProducto", {
+          productos: productos
         });
       }
 
@@ -70,12 +67,9 @@ class ProductoController {
         search = search.toString();
     
         try {
-          const productos
-         = await this.service.search(search);
+          const productos = await this.service.search(search);
           response.render("search", {
-            productos
-          : productos
-          ,
+            productos: productos,
             search: search
           });
         } catch (err) {
