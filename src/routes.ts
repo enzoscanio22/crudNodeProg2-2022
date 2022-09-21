@@ -14,7 +14,7 @@ router.get("/add", (request, response) => {
   response.render("add");
 });
 
-router.get("./viewsProducto/addProducto", (request, response) => {
+router.get("/views/viewsProducto/addProducto", (request, response) => {
   response.render("addProducto");
 });
 
