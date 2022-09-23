@@ -31,10 +31,10 @@
             <a class="nav-link active" aria-current="page" href="../">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./addProducto">Agregar Producto</a>
+            <a class="nav-link active" aria-current="page" href="./">Lista de Usuarios</a>
           </li>
         </ul>
-        <form class="d-flex" action="./search" method="GET">
+        <form class="d-flex" action="./searchProducto" method="GET">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" name="search">
           <button class="btn secondary-btn" type="submit">Buscar</button>
         </form>
@@ -81,7 +81,7 @@
             <td>
               <div class="row">
                 <div class="row">
-                  <form action="./edit" method="GET">
+                  <form action="./editProducto" method="GET">
                     <input type="hidden" name="id" value="<%= producto.id %>">
                     <button type="submit" class="btn edit-btn"><i class="bi bi-pencil"></i></button>
                   </form>
@@ -101,14 +101,14 @@
     </table>
     <br>
     <br>
-    <div class="col-md-5">
+    <div class="col-md-6">
       <div class="float-start">
-        <a href="./addProducto" class="btn primary-btn">Agregar Producto</a>
+        <a href="../" class="btn secondary-btn">Home</a>
       </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
       <div class="float-end">
-        <a href="../" class="btn secondary-btn">Volver a Home</a>
+        <a href="./addProducto" class="btn primary-btn">Agregar Producto</a>
       </div>
     </div>
   </div>

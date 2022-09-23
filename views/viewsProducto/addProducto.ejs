@@ -30,11 +30,8 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="../">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./addProducto">Ingresar Producto</a>
-          </li>
         </ul>
-        <form class="d-flex" action="./search" method="GET">
+        <form class="d-flex" action="./searchProducto" method="GET">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" name="search">
           <button class="btn secondary-btn" type="submit">Buscar</button>
         </form>
@@ -47,7 +44,7 @@
       <h2>Añadir un Producto</h2>
     </div>
     <br>
-    <form action="./viewsProducto/addProductos" method="POST">
+    <form action="./add-producto" method="POST">
       <div class="row">
         <div class="col-12">
           <label for="nombreProducto" class="form-label">Nombre de Producto</label>
@@ -69,7 +66,7 @@
       <div class="row">
         <div class="col-6">
           <div class="float-start">
-            <a href="../" class="btn secondary-btn">Volver a Home</a>
+            <a href="./indexProducto" class="btn secondary-btn">Volver a Tabla de Productos</a>
           </div>
         </div>
         <div class="col-6">

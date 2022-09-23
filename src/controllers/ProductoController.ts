@@ -48,7 +48,7 @@ class ProductoController {
     
         const producto = await this.service.getData(id);
     
-        return response.render("edit", {
+        return response.render("editProducto", {
           producto: producto
         });
       }
@@ -68,7 +68,7 @@ class ProductoController {
     
         try {
           const productos = await this.service.search(search);
-          response.render("search", {
+          response.render("searchProducto", {
             productos: productos,
             search: search
           });

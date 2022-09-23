@@ -29,11 +29,11 @@ router.post("/edit-user", userController.handleUpdateUserController.bind(userCon
 router.post("/delete-user", userController.handleDeleteUserService.bind(userController));
 
 
-router.post("/addProductos", productoController.handleProductoController.bind(productoController));
+router.post("/add-productos", productoController.handleProductoController.bind(productoController));
 
-router.get("/search", productoController.handleSearchProductoController.bind(productoController));
+router.get("/searchProducto", productoController.handleSearchProductoController.bind(productoController));
 
-router.get("/edit", productoController.handleGetProductoDataController.bind(productoController));
+router.get("/editProducto", productoController.handleGetProductoDataController.bind(productoController));
 
 router.post("/edit-producto", productoController.handleUpdateProductoController.bind(productoController));
 
