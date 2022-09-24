@@ -15,12 +15,12 @@ class ProductoController {
           descripción,
           precio
         }).then(() => {
-          response.render("message", {
+          response.render("producto/messageProducto", {
             message: "Producto registrado con éxito."
           });
         });
       } catch (err) {
-        response.render("message", {
+        response.render("producto/messageProducto", {
           message: `Error al registrar producto: ${err.message}`
         });
       }
@@ -31,12 +31,12 @@ class ProductoController {
     
         try {
           await this.service.delete(id).then(() => {
-            response.render("message", {
+            response.render("producto/messageProducto", {
               message: "Producto eliminado exitosamente."
             });
           });
         } catch (err) {
-          response.render("message", {
+          response.render("producto/messageProducto", {
             message: `Error al eliminar Producto: ${err.message}`
           });
         }
@@ -48,7 +48,7 @@ class ProductoController {
     
         const producto = await this.service.getData(id);
     
-        return response.render("editProducto", {
+        return response.render("producto/editProducto", {
           producto: producto
         });
       }
@@ -57,7 +57,7 @@ class ProductoController {
     
         const productos = await this.service.list();
     
-        return response.render("./viewsProducto/indexProducto", {
+        return response.render("producto/indexProducto", {
           productos: productos
         });
       }
@@ -68,12 +68,12 @@ class ProductoController {
     
         try {
           const productos = await this.service.search(search);
-          response.render("searchProducto", {
+          response.render("producto/searchProducto", {
             productos: productos,
             search: search
           });
         } catch (err) {
-          response.render("message", {
+          response.render("producto/messageProducto", {
             message: `Error al buscar producto: ${err.message}`
           });
         }
@@ -84,12 +84,12 @@ class ProductoController {
     
         try {
           await this.service.update({ id, nombreProducto, descripción, precio }).then(() => {
-            response.render("message", {
+            response.render("producto/messageProducto", {
               message: "Producto actualizado con éxito."
             });
           });
         } catch (err) {
-          response.render("message", {
+          response.render("producto/messageProducto", {
             message: `Error al actualizar producto: ${err.message}`
           });
         }

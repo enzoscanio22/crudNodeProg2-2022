@@ -17,12 +17,12 @@ class UserController {
           ciudad,
           provincia
         }).then(() => {
-          response.render("message", {
+          response.render("usuario/message", {
             message: "Usuario registrado con éxito."
           });
         });
       } catch (err) {
-        response.render("message", {
+        response.render("usuario/message", {
           message: `Error al registrar usuario: ${err.message}`
         });
       }
@@ -33,12 +33,12 @@ class UserController {
     
         try {
           await this.service.delete(id).then(() => {
-            response.render("message", {
+            response.render("usuario/message", {
               message: "Usuario eliminado exitosamente."
             });
           });
         } catch (err) {
-          response.render("message", {
+          response.render("usuario/message", {
             message: `Error al eliminar usuario: ${err.message}`
           });
         }
@@ -50,7 +50,7 @@ class UserController {
     
         const user = await this.service.getData(id);
     
-        return response.render("edit", {
+        return response.render("usuario/edit", {
           user: user
         });
       }
@@ -59,7 +59,7 @@ class UserController {
     
         const users = await this.service.list();
     
-        return response.render("index", {
+        return response.render("usuario/indexUsuario", {
           users: users
         });
       }
@@ -70,12 +70,12 @@ class UserController {
     
         try {
           const users = await this.service.search(search);
-          response.render("search", {
+          response.render("usuario/search", {
             users: users,
             search: search
           });
         } catch (err) {
-          response.render("message", {
+          response.render("usuario/message", {
             message: `Error al buscar usuario: ${err.message}`
           });
         }
@@ -86,12 +86,12 @@ class UserController {
     
         try {
           await this.service.update({ id, nombreUsuario, eMail, teléfono, ciudad, provincia }).then(() => {
-            response.render("message", {
+            response.render("usuario/message", {
               message: "Usuario actualizado con éxito."
             });
           });
         } catch (err) {
-          response.render("message", {
+          response.render("usuario/message", {
             message: `Error al actualizar usuario: ${err.message}`
           });
         }

@@ -8,7 +8,7 @@ function counter() {
     countdown--;
     if (countdown === 0) {
       clearInterval(timer);
-      window.location.href = "./"
+      window.location.href = "../"
     }
   }, 1000);
 }

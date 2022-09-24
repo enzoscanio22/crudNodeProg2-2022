@@ -26,7 +26,6 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
 app.use(express.static(path.join(__dirname, "..", "public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "..", "views"));
-app.set("viewsProducto", path.join(__dirname, "..", "views","viewsProducto"));
 
 app.listen(3000, () => {
   console.log("La aplicación ha sido levantada con éxito. Server en el puerto ${PORT}. http://localhost:3000/");
