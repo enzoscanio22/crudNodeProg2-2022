@@ -10,7 +10,7 @@ const productoController = new ProductoController();
 router.get("/", (request, response)=>{
   response.render("./index")
 })
-router.get("/usuario/index", userController.handleListUsersController.bind(userController));
+router.get("/usuario/indexUsuario", userController.handleListUsersController.bind(userController));
 router.get("/producto/indexProducto", productoController.handleListProductosController.bind(productoController))
 
 router.get("/usuario/add", (request, response) => {
