@@ -17,19 +17,19 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="bg-dark">
   <%- include ('../navCategoria'); -%> 
   <br>
   <div class="row container centered" width="100vw">
-    <div class="text-center">
+    <div class="text-center p-btn">
       <h2>Buscando por "<%= search %>"</h2>
     </div>
     <br>
     <br>
     <br>
-    <table class="table table-hover">
+    <table class="table table-hover table-dark p-btn">
       <thead>
-        <th scope="col">Nombre de Categoria</th>
+        <th scope="col">Nombre de Categoría</th>
         <th scope="col">Creación</th>
         <th scope="col">Última actualización</th>
         <th scope="col">Acciones</th>
@@ -69,6 +69,14 @@
           <% }) %>
       </tbody>
     </table>
+    <br>
+      <div class="row">
+        <div class="col-6">
+          <div class="float-start">
+            <a href="/categoria/indexCategoria" class="btn primary-btn">Volver a Tabla de Categorías</a>
+          </div>
+        </div>
+      </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"

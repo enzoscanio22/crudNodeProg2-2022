@@ -17,37 +17,37 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="bg-dark">
   <%- include ('../navProducto'); -%> 
   <br>
-  <div class="container">
-    <div class="text-center">
+  <div class="container table-dark">
+    <div class="text-center p-btn">
       <h2>Añadir un Producto</h2>
     </div>
     <br>
     <form action="/producto/add-producto" method="POST">
       <div class="row">
         <div class="col-12">
-          <label for="nombreProducto" class="form-label">Nombre de Producto</label>
-          <input type="text" name="nombreProducto" id="nombreProducto" class="form-control">
+          <label for="nombreProducto" class="form-label p-btn">Nombre de Producto</label>
+          <input type="text" name="nombreProducto" id="nombreProducto" class="form-control secondary-btn">
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-6">
-          <label for="descripción" class="form-label">Descripción</label>
-          <input type="text" name="descripción" id="descripción" class="form-control">
+          <label for="descripción" class="form-label p-btn">Descripción</label>
+          <input type="text" name="descripción" id="descripción" class="form-control secondary-btn">
         </div>
         <div class="col-6">
-          <label for="precio" class="form-label">Precio</label>
-          <input type="text" name="precio" id="precio" class="form-control">
+          <label for="precio" class="form-label p-btn">Precio</label>
+          <input type="text" name="precio" id="precio" class="form-control secondary-btn">
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-6">
           <div class="float-start">
-            <a href="/producto/indexProducto" class="btn secondary-btn">Volver a Tabla de Productos</a>
+            <a href="/producto/indexProducto" class="btn primary-btn">Volver a Tabla de Productos</a>
           </div>
         </div>
         <div class="col-6">

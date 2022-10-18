@@ -4,14 +4,28 @@ body {
   max-height: 100vh!important;
 }
 
-
 .nav-icon {
   width: 80px;
+}
+
+.navbar{
+  border-bottom: ridge 2px #6cc24a;
 }
 
 .primary-btn {
   background-color: #6cc24a;
   color: #fff;
+}
+
+.p-btn {
+  border-color: #6cc24a;
+  color: #6cc24a;
+}
+
+.provinciaseleccion-btn {
+  background-color: transparent;
+  border-color: #6cc24a;
+  color: #6cc24a;
 }
 
 .primary-btn:hover {
@@ -55,7 +69,7 @@ body {
 }
 
 #message-div {
-  border: 2px solid lightgrey;
+  border: 2px solid #6cc24a;
   background-color: #f8f9fa;
   padding: 30px;
 }

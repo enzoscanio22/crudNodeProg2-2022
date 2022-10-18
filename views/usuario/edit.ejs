@@ -17,11 +17,11 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="bg-dark">
   <%- include ('../nav'); -%>
   <br>
-  <div class="container">
-    <div class="text-center">
+  <div class="container table-dark">
+    <div class="text-center p-btn">
       <h2>Editar Usuario</h2>
     </div>
     <br>
@@ -29,39 +29,56 @@
       <input type="hidden" name="id" value="<%= user.id %>">
       <div class="row">
         <div class="col-12">
-          <label for="nombreUsuario" class="form-label">Nombre de Usuario</label>
-          <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" value="<%= user.nombreUsuario %>">
+          <label for="nombreUsuario" class="form-label p-btn">Nombre de Usuario</label>
+          <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control secondary-btn" value="<%= user.nombreUsuario %>">
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-6">
-          <label for="eMail" class="form-label">E-mail</label>
-          <input type="text" name="eMail" id="eMail" class="form-control" value="<%= user.eMail %>">
+          <label for="eMail" class="form-label p-btn">E-mail</label>
+          <input type="text" name="eMail" id="eMail" class="form-control secondary-btn" value="<%= user.eMail %>">
         </div>
         <div class="col-6">
-          <label for="teléfono" class="form-label">Teléfono</label>
-          <input type="text" name="teléfono" id="teléfono" class="form-control" value="<%= user.teléfono %>">
+          <label for="teléfono" class="form-label p-btn">Teléfono</label>
+          <input type="text" name="teléfono" id="teléfono" class="form-control secondary-btn" value="<%= user.teléfono %>">
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-6">
-          <label for="ciudad" class="form-label">Ciudad</label>
-          <input type="text" name="ciudad" id="ciudad" class="form-control" value="<%= user.ciudad %>">
+          <label for="ciudad" class="form-label p-btn">Ciudad</label>
+          <input type="text" name="ciudad" id="ciudad" class="form-control secondary-btn" value="<%= user.ciudad %>">
         </div>
         <div class="col-6">
-          <label for="provincia" class="form-label">Provincia</label>
-          <select name="provincia" id="provincia" class="form-select">
-
+          <label for="provincia" class="form-label p-btn">Provincia</label>
+          <select name="provincia" id="provincia" class="form-select provinciaseleccion-btn">
             </option>
-            <option value="MDZ">Mendoza</option>
-            <option value="BA">Buenos Aires</option>
-            <option value="MS">Misiones</option>
+            <option value="AA">Antartida Argentina</option>
+            <option value="BSAS">Buenos Aires</option>
+            <option value="CABA">C.Autónoma de Buenos Aires</option>
+            <option value="CAT">Catamarca</option>
+            <option value="CHA">Chaco</option>
+            <option value="CHU">Chubut</option>
+            <option value="CORD">Córdoba</option>
+            <option value="CORR">Corrientes</option>
+            <option value="ER">Entre Rios</option>
+            <option value="FM">Formosa</option>
+            <option value="JU">Jujuy</option>
             <option value="LP">La Pampa</option>
-            <option value="NQ">Neuquen</option>
-            <option value="SL">San Luís</option>
+            <option value="LR">La Rioja</option>
+            <option value="MZA">Mendoza</option>
+            <option value="MS">Misiones</option>
+            <option value="NQN">Neuquén</option>
+            <option value="RN">Rio Negro</option>
+            <option value="SLT">Salta</option>
             <option value="SJ">San Juan</option>
+            <option value="SL">San Luis</option>
+            <option value="SC">Santa Cruz</option>
+            <option value="SF">Santa Fé</option>
+            <option value="SDE">Santiago del Estero</option>
+            <option value="TFG">Tierra del Fuego</option>
+            <option value="TUC">Tucumán</option>
           </select>
         </div>
       </div>
@@ -69,7 +86,7 @@
       <div class="row">
         <div class="col-6">
           <div class="float-start">
-            <a href="./" class="btn secondary-btn">Volver a Home</a>
+            <a href="/usuario/indexUsuario" class="btn primary-btn">Volver a Lista de Usuarios</a>
           </div>
         </div>
         <div class="col-6">

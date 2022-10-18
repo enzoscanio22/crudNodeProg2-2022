@@ -17,32 +17,32 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="bg-dark">
   <%- include ('../navCategoria'); -%> 
   <br>
-  <div class="container">
-    <div class="text-center">
-      <h2>Editar Categoria</h2>
+  <div class="container table-dark">
+    <div class="text-center p-btn">
+      <h2>Editar Categoría</h2>
     </div>
     <br>
     <form action="/categoria/edit-categoria" method="POST">
       <input type="hidden" name="id" value="<%= categoria.id %>">
       <div class="row">
         <div class="col-12">
-          <label for="nombreCategoria" class="form-label">Nombre de Categoria</label>
-          <input type="text" name="nombreCategoria" id="nombreCategoria" class="form-control" value="<%= categoria.nombreCategoria %>">
+          <label for="nombreCategoria" class="form-label p-btn">Nombre de la Categoría</label>
+          <input type="text" name="nombreCategoria" id="nombreCategoria" class="form-control secondary-btn" value="<%= categoria.nombreCategoria %>">
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-6">
           <div class="float-start">
-            <a href="/categoria/indexCategoria" class="btn secondary-btn">Volver a Tabla de Categorias</a>
+            <a href="/categoria/indexCategoria" class="btn primary-btn">Volver a Tabla de Categorías</a>
           </div>
         </div>
         <div class="col-6">
           <div class="float-end">
-            <button type="submit" class="btn primary-btn">Actualizar categoria</button>
+            <button type="submit" class="btn primary-btn">Actualizar categoría</button>
           </div>
         </div>
       </div>
