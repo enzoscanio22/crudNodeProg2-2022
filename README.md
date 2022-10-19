@@ -17,4 +17,5 @@ CRUD made with Node.js, Express, TypeScript, TypeORM, EJS &amp; SQLite.
 - npm install --location=local
 - Create the `database.sqlite` file inside the `src/database` folder.
 - npm run typeorm migration:run
+- npm run typeorm -- migration:generate -n creacion (Para general la base de datos desde cero)
 - npm run dev

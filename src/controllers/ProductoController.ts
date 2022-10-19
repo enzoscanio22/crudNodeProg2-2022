@@ -7,13 +7,14 @@ class ProductoController {
       this.service= new ProductoService();
     }
     async handleProductoController(request: Request, response: Response) {
-      const { nombreProducto, descripción, precio } = request.body;
+      const { nombreProducto, descripción, precio, categoria } = request.body;
   
       try {
         await this.service.create({
           nombreProducto,
           descripción,
-          precio
+          precio,
+          categoria
         }).then(() => {
           response.render("producto/messageProducto", {
             message: "Producto registrado con éxito."

@@ -1,16 +1,18 @@
 import { getCustomRepository } from "typeorm";
 import { ProductosRepository } from "../repositories/ProductosRepository";
 import { Producto } from "../entities/Producto";
+import { Categoria } from "../entities/Categoria";
 
 interface IProducto {
   id?: string
   nombreProducto: string;
   descripción: string;
   precio: number;
+  categoria?: Categoria[];
 }
 
 class ProductoService{
-    async create({ nombreProducto, descripción, precio }: IProducto) {
+    async create({ nombreProducto, descripción, precio, categoria }: IProducto) {
         if (!nombreProducto || !descripción || !precio ) {
           throw new Error("Por favor rellene todos los campos");
         }
@@ -29,7 +31,7 @@ class ProductoService{
         //   throw new Error("La descripcion que selecciono ya está registrado");
         // }
     
-        const producto = productosRepository.create({ nombreProducto, descripción, precio });
+        const producto = productosRepository.create({ nombreProducto, descripción, precio, categoria });
     
         await productosRepository.save(producto);
     

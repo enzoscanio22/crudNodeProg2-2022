@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
+import { Categoria } from "./Categoria";
 
 @Entity("productos")
 class Producto {
@@ -21,6 +22,9 @@ class Producto {
 
   @UpdateDateColumn()
   fechaModificacion: Date;
+
+  @ManyToOne(type => Categoria, categoria => categoria.producto)
+  categoria:Categoria[];
 
   constructor() {
     if (!this.id) {

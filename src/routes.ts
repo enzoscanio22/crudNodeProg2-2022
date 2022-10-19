@@ -2,12 +2,14 @@ import { request, response, Router } from "express";
 import UserController from "./controllers/UserController";
 import ProductoController from "./controllers/ProductoController";
 import CategoriaController from "./controllers/CategoriaController";
+import CategoriaService from "./services/CategoriaService";
 
 const router = Router();
 
 const userController = new UserController();
 const productoController = new ProductoController();
 const categoriaController = new CategoriaController();
+const categoriaService = new CategoriaService();
 
 router.get("/", (request, response)=>{
   response.render("./index")
@@ -20,8 +22,9 @@ router.get("/usuario/add", (request, response) => {
   response.render("usuario/add");
 });
 
-router.get("/producto/addProducto", (request, response) => {
-  response.render("producto/addProducto");
+router.get("/producto/addProducto", async (request, response) => {
+  const categorias= await categoriaService.list();
+  response.render("producto/addProducto", {listaDeCategorias:categorias});
 });
 
 router.get("/categoria/addCategoria", (request, response) => {
