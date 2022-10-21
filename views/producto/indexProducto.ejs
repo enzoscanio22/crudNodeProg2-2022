@@ -32,6 +32,7 @@
         <th scope="col">Nombre de Producto</th>
         <th scope="col">Descripción</th>
         <th scope="col">Precio</th>
+        <th scope="col">Categoría</th>
         <th scope="col">Creación</th>
         <th scope="col">Última actualización</th>
         <th scope="col">Acciones</th>
@@ -47,6 +48,9 @@
             </td>
             <td>
               <%= producto.precio %>
+            </td>
+            <td>
+              <%= producto.categoria.nombreCategoria%>
             </td>
             <td>
               <%= producto.fechaCreacion.toLocaleDateString() %>

@@ -8,7 +8,7 @@ interface IProducto {
   nombreProducto: string;
   descripción: string;
   precio: number;
-  categoria?: Categoria[];
+  categoria?: Categoria;
 }
 
 class ProductoService{
@@ -55,15 +55,18 @@ class ProductoService{
       async getData(id: string) {
         const productosRepository = getCustomRepository(ProductosRepository);
     
-        const producto = await productosRepository.findOne(id);
-    
+        const producto = await productosRepository.findOne(id, {relations:["categoria"]});
+        // console.log(producto)
         return producto;
       }
 
       async list() {
         const productosRepository = getCustomRepository(ProductosRepository);
     
-        const productos = await productosRepository.find();
+        const productos = await productosRepository.find({
+          relations: ["categoria"]
+
+        });
     
         return productos;
       }

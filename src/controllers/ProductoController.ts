@@ -1,10 +1,13 @@
 import { Request, Response } from "express";
+import CategoriaService from "../services/CategoriaService";
 import ProductoService from "../services/ProductoService"
 
 class ProductoController {
     private service:ProductoService;
+    public categoriaService:CategoriaService;
     constructor(){
       this.service= new ProductoService();
+      this.categoriaService= new CategoriaService();
     }
     async handleProductoController(request: Request, response: Response) {
       const { nombreProducto, descripción, precio, categoria } = request.body;
@@ -48,9 +51,11 @@ class ProductoController {
         id = id.toString();
     
         const producto = await this.service.getData(id);
+        const categorias= await this.categoriaService.list();
     
         return response.render("producto/editProducto", {
-          producto: producto
+          producto: producto,
+          listaDeCategorias: categorias
         });
       }
 

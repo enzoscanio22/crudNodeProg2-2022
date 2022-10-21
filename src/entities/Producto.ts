@@ -24,7 +24,7 @@ class Producto {
   fechaModificacion: Date;
 
   @ManyToOne(type => Categoria, categoria => categoria.producto)
-  categoria:Categoria[];
+  categoria:Categoria;
 
   constructor() {
     if (!this.id) {

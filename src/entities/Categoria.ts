@@ -18,7 +18,7 @@ class Categoria {
   fechaModificacion: Date;
 
   @OneToMany(type => Producto, producto => producto.categoria)
-  producto:Producto;
+  producto:Producto[];
 
   constructor() {
     if (!this.id) {

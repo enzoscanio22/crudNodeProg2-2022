@@ -45,6 +45,18 @@
         </div>
       </div>
       <br>
+      <div class="col-6">
+        <label for="categoria" class="form-label p-btn">Categorías</label>
+        <select name="categoria" id="categoria" class="form-select secondary-btn">
+          <% listaDeCategorias.forEach(function(categoria) {%>
+            <option value="<%= categoria.id%>" selected>
+              <%= categoria.nombreCategoria %>
+              <% }) %>
+              <option value="" selected disabled>Seleccione una Categoría</option>
+          </option>
+        </select>
+      </div>
+      <br>
       <div class="row">
         <div class="col-6">
           <div class="float-start">
@@ -56,6 +68,7 @@
             <button type="submit" class="btn primary-btn">Actualizar producto</button>
           </div>
         </div>
+        <br>
       </div>
     </form>
   </div>
