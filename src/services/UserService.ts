@@ -9,11 +9,12 @@ interface IUser {
   teléfono: string;
   ciudad: string;
   provincia: string;
+  contraseña: string;
 }
 
 class UserService{
-    async create({ nombreUsuario, eMail, teléfono, ciudad, provincia }: IUser) {
-        if (!nombreUsuario || !eMail || !teléfono || !ciudad || !provincia) {
+    async create({ nombreUsuario, eMail, teléfono, ciudad, provincia, contraseña }: IUser) {
+        if (!nombreUsuario || !eMail || !teléfono || !ciudad || !provincia || !contraseña) {
           throw new Error("Por favor rellene todos los campos");
         }
     
@@ -31,7 +32,7 @@ class UserService{
           throw new Error("El eMail que selecciono ya está registrado");
         }
     
-        const user = usersRepository.create({ nombreUsuario, eMail, teléfono, ciudad, provincia });
+        const user = usersRepository.create({ nombreUsuario, eMail, teléfono, ciudad, provincia, contraseña });
     
         await usersRepository.save(user);
     
@@ -82,12 +83,13 @@ class UserService{
           .orWhere("teléfono like :search", { search: `%${search}%` })
           .orWhere("ciudad like :search", { search: `%${search}%` })
           .orWhere("provincia like :search", { search: `%${search}%` })
+          .orWhere("contraseña like :search", { search: `%${search}%` })
           .getMany();
     
         return user;
       }
 
-      async update({ id, nombreUsuario, eMail, teléfono, ciudad, provincia }: IUser) {
+      async update({ id, nombreUsuario, eMail, teléfono, ciudad, provincia, contraseña }: IUser) {
         const usersRepository = getCustomRepository(UsersRepository);
     
         const user = await usersRepository

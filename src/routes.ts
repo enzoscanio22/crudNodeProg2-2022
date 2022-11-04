@@ -11,25 +11,42 @@ const productoController = new ProductoController();
 const categoriaController = new CategoriaController();
 const categoriaService = new CategoriaService();
 
+// Renderizar Login
+
 router.get("/", (request, response)=>{
-  response.render("./index")
+  response.render("login")
 })
+
+// Renderizar Index
+
+router.get("/index", (request, response)=>{
+  response.render("index")
+})
+
 router.get("/usuario/indexUsuario", userController.handleListUsersController.bind(userController));
 router.get("/producto/indexProducto", productoController.handleListProductosController.bind(productoController))
 router.get("/categoria/indexCategoria", categoriaController.handleListCategoriaController.bind(categoriaController))
 
+// Añadir Usuario
+
 router.get("/usuario/add", (request, response) => {
   response.render("usuario/add");
 });
+
+// Añadir Producto
 
 router.get("/producto/addProducto", async (request, response) => {
   const categorias= await categoriaService.list();
   response.render("producto/addProducto", {listaDeCategorias:categorias});
 });
 
+// Añadir Categoria
+
 router.get("/categoria/addCategoria", (request, response) => {
   response.render("categoria/addCategoria");
 });
+
+// Rustas de Usuario
 
 router.post("/usuario/add-user", userController.handleUserController.bind(userController));
 
@@ -41,6 +58,7 @@ router.post("/usuario/edit-user", userController.handleUpdateUserController.bind
 
 router.post("/usuario/delete-user", userController.handleDeleteUserService.bind(userController));
 
+// Rutas de Producto
 
 router.post("/producto/add-producto", productoController.handleProductoController.bind(productoController));
 
@@ -52,6 +70,7 @@ router.post("/producto/edit-producto", productoController.handleUpdateProductoCo
 
 router.post("/producto/delete-producto", productoController.handleDeleteProductoService.bind(productoController));
 
+// Rutas de Categorias
 
 router.post("/categoria/add-categoria", categoriaController.handleCategoriaController.bind(categoriaController));
 

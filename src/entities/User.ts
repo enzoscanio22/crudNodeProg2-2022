@@ -22,6 +22,9 @@ class Usuario {
   @Column()
   provincia: string;
 
+  @Column()
+  contraseña: string;
+
   @CreateDateColumn()
   fechaCreacion: Date;
 

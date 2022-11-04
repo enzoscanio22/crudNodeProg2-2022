@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>CRUD LOGIN</title>
+  <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styleLogin.css">
+</head>
+
+<body>
+  <div id="cardLogin">
+    <div id="cardLogin-content">
+      <div id="cardLogin-title">
+        <h2>LOGIN</h2>
+        <div class="underline-title"></div>
+      </div>
+      <form method="post" class="form" action="/login">
+        <label for="eMail" style="padding-top:13px">
+            &nbsp;Email
+          </label>
+        <input id="" class="form-contentLogin" type="text" name="eMail" autocomplete="on" required />
+        <div class="form-borderLogin"></div>
+        <label for="contraseña" style="padding-top:22px">&nbsp;Contraseña
+          </label>
+        <input id="" class="form-contentLogin" type="password" name="contraseña" required />
+        <div class="form-borderLogin"></div>
+        <!-- <a href="#">
+          <legend id="forgot-passLogin">Forgot password?</legend>
+        </a> -->
+        <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
+        <a href="/usuario/add" id="signupLogin">Registrarse</a>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -7,7 +7,7 @@ class UserController {
       this.service= new UserService();
     }
     async handleUserController(request: Request, response: Response) {
-      const { nombreUsuario, eMail, teléfono, ciudad, provincia } = request.body;
+      const { nombreUsuario, eMail, teléfono, ciudad, provincia, contraseña } = request.body;
   
       try {
         await this.service.create({
@@ -15,7 +15,8 @@ class UserController {
           eMail,
           teléfono,
           ciudad,
-          provincia
+          provincia,
+          contraseña
         }).then(() => {
           response.render("usuario/message", {
             message: "Usuario registrado con éxito."
@@ -82,10 +83,10 @@ class UserController {
       }
 
       async handleUpdateUserController(request: Request, response: Response) {
-        const { id, nombreUsuario, eMail, teléfono, ciudad, provincia } = request.body;
+        const { id, nombreUsuario, eMail, teléfono, ciudad, provincia, contraseña } = request.body;
     
         try {
-          await this.service.update({ id, nombreUsuario, eMail, teléfono, ciudad, provincia }).then(() => {
+          await this.service.update({ id, nombreUsuario, eMail, teléfono, ciudad, provincia, contraseña }).then(() => {
             response.render("usuario/message", {
               message: "Usuario actualizado con éxito."
             });
