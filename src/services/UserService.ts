@@ -2,6 +2,7 @@ import { getCustomRepository } from "typeorm";
 import { UsersRepository } from "../repositories/UsersRepository";
 import { Usuario } from "../entities/User";
 
+const bcrypt=require("bcrypt")
 interface IUser {
   id?: string
   nombreUsuario: string;
@@ -31,11 +32,19 @@ class UserService{
         if (emailAlreadyExists) {
           throw new Error("El eMail que selecciono ya está registrado");
         }
+        console.log(contraseña)
+        const salt = bcrypt.genSaltSync(10)
+
+        // Hash Password
+        const hash = bcrypt.hashSync(contraseña, salt)
+        contraseña=hash
+        
+        console.log(hash)
     
         const user = usersRepository.create({ nombreUsuario, eMail, teléfono, ciudad, provincia, contraseña });
-    
+        
         await usersRepository.save(user);
-    
+
         return user;
     
       }
@@ -83,7 +92,6 @@ class UserService{
           .orWhere("teléfono like :search", { search: `%${search}%` })
           .orWhere("ciudad like :search", { search: `%${search}%` })
           .orWhere("provincia like :search", { search: `%${search}%` })
-          .orWhere("contraseña like :search", { search: `%${search}%` })
           .getMany();
     
         return user;
@@ -95,7 +103,7 @@ class UserService{
         const user = await usersRepository
           .createQueryBuilder()
           .update(Usuario)
-          .set({ nombreUsuario, eMail, teléfono, ciudad, provincia })
+          .set({ nombreUsuario, eMail, teléfono, ciudad, provincia, contraseña })
           .where("id = :id", { id })
           .execute();
     

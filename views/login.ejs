@@ -17,15 +17,15 @@
         <h2>LOGIN</h2>
         <div class="underline-title"></div>
       </div>
-      <form method="post" class="form" action="/login">
-        <label for="eMail" style="padding-top:13px">
+      <form action="/login" method="post" class="form" >
+        <label for="nombreUsuario" style="padding-top:13px">
             &nbsp;Email
           </label>
-        <input id="" class="form-contentLogin" type="text" name="eMail" autocomplete="on" required />
+        <input id="nombreUsuario" class="form-contentLogin" type="text" name="nombreUsuario" autocomplete="on" required />
         <div class="form-borderLogin"></div>
         <label for="contraseña" style="padding-top:22px">&nbsp;Contraseña
           </label>
-        <input id="" class="form-contentLogin" type="password" name="contraseña" required />
+        <input id="contraseña" class="form-contentLogin" type="password" name="contraseña" required />
         <div class="form-borderLogin"></div>
         <!-- <a href="#">
           <legend id="forgot-passLogin">Forgot password?</legend>
@@ -33,8 +33,7 @@
         <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
         <a href="/usuario/add" id="signupLogin">Registrarse</a>
       </form>
-    </div>
   </div>
-</body>
+</body> 
 
 </html>

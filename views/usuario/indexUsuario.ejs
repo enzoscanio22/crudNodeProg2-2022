@@ -66,17 +66,18 @@
             </td>
             <td>
               <div class="row">
-                <div class="row">
+                <div class="col">
                   <form action="./edit" method="GET">
                     <input type="hidden" name="id" value="<%= user.id %>">
-                    <button type="submit" class="btn edit-btn"><i class="bi bi-pencil"></i></button>
+                    <button type="submit" class="btn edit-btn"><i class="bi bi-pencil-square"></i></button>
                   </form>
                 </div>
-                <div class="row"></div>
-                <div class="row">
+                <!-- <div class="row"></div> -->
+                <br>
+                <div class="col">
                   <form action="./delete-user" method="POST">
                     <input type="hidden" name="id" value="<%= user.id %>">
-                    <button type="submit" class="btn delete-btn"><i class="bi bi-trash"></i></button>
+                    <button type="submit" class="btn delete-btn"><i class="bi bi-trash-fill"></i></button>
                   </form>
                 </div>
               </div>

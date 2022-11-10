@@ -50,17 +50,18 @@
             </td>
             <td>
               <div class="row">
-                <div class="row">
+                <div class="col">
                   <form action="./editCategoria" method="GET">
                     <input type="hidden" name="id" value="<%= categoria.id %>">
-                    <button type="submit" class="btn edit-btn"><i class="bi bi-pencil"></i></button>
+                    <button type="submit" class="btn edit-btn"><i class="bi bi-pencil-square"></i></button>
                   </form>
                 </div>
+                <br>
                 <div class="row"></div>
-                <div class="row">
+                <div class="col">
                   <form action="./delete-categoria" method="POST">
                     <input type="hidden" name="id" value="<%= categoria.id %>">
-                    <button type="submit" class="btn delete-btn"><i class="bi bi-trash"></i></button>
+                    <button type="submit" class="btn delete-btn"><i class="bi bi-trash-fill"></i></button>
                   </form>
                 </div>
               </div>

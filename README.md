@@ -12,11 +12,15 @@ CRUD made with Node.js, Express, TypeScript, TypeORM, EJS &amp; SQLite.
 - The CRUD will be avaiable at `http://localhost:3000`.
 - 
 ## How to run with npm:
+- npm install
 - npm install -D tslib @types/node
+- npm i ts-node-dev -D   // Eliminar el ts-node-dev del package.json antes 
 - npm i -D @types/express
 - npm install --location=local
 - npm install express ejs passport express-session cookie-parser // Login 
 - npm install passport-local       // Login
+- npm i bcryptjs // Encriptar contraseña
+- npm i nodemon -D // Para que me tome los cambios cuando tengo el server andando
 - Create the `database.sqlite` file inside the `src/database` folder.
 - npm run typeorm migration:run
 - npm run typeorm -- migration:generate -n creacion (Para general la base de datos desde cero)

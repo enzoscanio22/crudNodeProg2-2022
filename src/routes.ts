@@ -13,15 +13,15 @@ const categoriaService = new CategoriaService();
 
 // Renderizar Login
 
-router.get("/", (request, response)=>{
-  response.render("login")
-})
+// router.get("/", (request, response)=>{
+//   response.render("login")
+// })
 
 // Renderizar Index
 
-router.get("/index", (request, response)=>{
-  response.render("index")
-})
+// router.get("/index", (request, response)=>{
+//   response.render("index")
+// })
 
 router.get("/usuario/indexUsuario", userController.handleListUsersController.bind(userController));
 router.get("/producto/indexProducto", productoController.handleListProductosController.bind(productoController))
@@ -29,9 +29,9 @@ router.get("/categoria/indexCategoria", categoriaController.handleListCategoriaC
 
 // Añadir Usuario
 
-router.get("/usuario/add", (request, response) => {
-  response.render("usuario/add");
-});
+// router.get("/usuario/add", (request, response) => {
+//   response.render("usuario/add");
+// });
 
 // Añadir Producto
 
