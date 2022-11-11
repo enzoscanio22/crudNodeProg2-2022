@@ -67,15 +67,14 @@
             <td>
               <div class="row">
                 <div class="col">
-                  <form action="./edit" method="GET">
+                  <form action="/usuario/edit" method="GET">
                     <input type="hidden" name="id" value="<%= user.id %>">
                     <button type="submit" class="btn edit-btn"><i class="bi bi-pencil-square"></i></button>
                   </form>
                 </div>
-                <!-- <div class="row"></div> -->
                 <br>
                 <div class="col">
-                  <form action="./delete-user" method="POST">
+                  <form action="/usuario/delete-user" method="POST">
                     <input type="hidden" name="id" value="<%= user.id %>">
                     <button type="submit" class="btn delete-btn"><i class="bi bi-trash-fill"></i></button>
                   </form>
@@ -90,7 +89,7 @@
     <br>
     <div class="col-md-6">
       <div class="float-start">
-        <a href="../" class="btn primary-btn">Home</a>
+        <a href="/index" class="btn primary-btn">Home</a>
       </div>
     </div>
     <div class="col-md-6">

@@ -8,8 +8,6 @@ import { getCustomRepository } from "typeorm";
 import { UsersRepository } from "./repositories/UsersRepository";
 const bcrypt=require("bcrypt")
 
-
-
 const app = express();
 // Login   
 // const expres = require('express') //le cambie nombre
@@ -39,10 +37,34 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "..", "views"));
 
 app.listen(8000, () => {
-  console.log("La aplicación ha sido levantada con éxito. Server en el puerto ${PORT}. http://localhost:3000/");
+  console.log("La aplicación ha sido levantada con éxito. Server en el puerto ${PORT}. http://localhost:8000/");
 });
 
 // LOGIN
+
+app.get('/',(req,res)=>{
+  res.render('login')
+ })
+ app.get('/index',(req,res)=>{
+   res.render('index')
+  })
+ app.get('/usuario/add',(req,res)=>{
+   res.render('usuario/add') //Para registrar usuario
+  })
+
+app.post('/login',async(req,res)=>{
+  console.log(req.body.nombreUsuario)
+  const eMail= req.body.nombreUsuario
+  const contraseña= req.body.contraseña
+  const usersRepository = getCustomRepository(UsersRepository);
+  const user = await usersRepository.findOne({ eMail });
+  const passwordIsValid = bcrypt.compare(contraseña, user.contraseña);
+  if (passwordIsValid){
+    res.render("index",{eMail:user})
+  }else{
+    res.render("login")
+  }
+})
 
 // app.get("/",(req,res)=>{
   
@@ -68,27 +90,3 @@ app.listen(8000, () => {
 // app.use(passport.initialize()) // Configuración contraseña
 
 // app.use(passport.session()) // Configuración session
-
-app.get('/',(req,res)=>{
-  res.render('login')
- })
- app.get('/index',(req,res)=>{
-   res.render('index')
-  })
- app.get('/usuario/add',(req,res)=>{
-   res.render('usuario/add') //Para registrar usuario
-  })
-
-app.post('/login',async(req,res)=>{
-  console.log(req.body.nombreUsuario)
-  const eMail= req.body.nombreUsuario
-  const contraseña= req.body.contraseña
-  const usersRepository = getCustomRepository(UsersRepository);
-  const user = await usersRepository.findOne({ eMail });
-  const passwordIsValid = bcrypt.compare(contraseña, user.contraseña);
-  if (passwordIsValid){
-    res.render("index",{eMail:user})
-  }else{
-    res.render("login")
-  }
-})

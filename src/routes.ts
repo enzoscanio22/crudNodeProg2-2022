@@ -48,6 +48,8 @@ router.get("/categoria/addCategoria", (request, response) => {
 
 // Rustas de Usuario
 
+router.get("/usuario",userController.handleListUsersController.bind(userController));
+
 router.post("/usuario/add-user", userController.handleUserController.bind(userController));
 
 router.get("/usuario/search", userController.handleSearchUserController.bind(userController));
@@ -60,6 +62,8 @@ router.post("/usuario/delete-user", userController.handleDeleteUserService.bind(
 
 // Rutas de Producto
 
+router.get("/producto", productoController.handleListProductosController.bind(productoController));
+
 router.post("/producto/add-producto", productoController.handleProductoController.bind(productoController));
 
 router.get("/producto/searchProducto", productoController.handleSearchProductoController.bind(productoController));
@@ -71,6 +75,8 @@ router.post("/producto/edit-producto", productoController.handleUpdateProductoCo
 router.post("/producto/delete-producto", productoController.handleDeleteProductoService.bind(productoController));
 
 // Rutas de Categorias
+
+router.get("/categoria", categoriaController.handleListCategoriaController.bind(categoriaController));
 
 router.post("/categoria/add-categoria", categoriaController.handleCategoriaController.bind(categoriaController));
 

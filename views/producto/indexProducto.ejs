@@ -63,15 +63,14 @@
             <td>
               <div class="row">
                 <div class="col">
-                  <form action="./editProducto" method="GET">
+                  <form action="/producto/editProducto" method="GET">
                     <input type="hidden" name="id" value="<%= producto.id %>">
                     <button type="submit" class="btn edit-btn"><i class="bi bi-pencil-square"></i></button>
                   </form>
                 </div>
                 <br>
-                <div class="row"></div>
                 <div class="col">
-                  <form action="./delete-producto" method="POST">
+                  <form action="/producto/delete-producto" method="POST">
                     <input type="hidden" name="id" value="<%= producto.id %>">
                     <button type="submit" class="btn delete-btn"><i class="bi bi-trash-fill"></i></button>
                   </form>
@@ -86,7 +85,7 @@
     <br>
     <div class="col-md-6">
       <div class="float-start">
-        <a href="../" class="btn primary-btn">Home</a>
+        <a href="/index" class="btn primary-btn">Home</a>
       </div>
     </div>
     <div class="col-md-6">
