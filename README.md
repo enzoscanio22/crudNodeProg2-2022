@@ -19,7 +19,7 @@ CRUD made with Node.js, Express, TypeScript, TypeORM, EJS &amp; SQLite.
 - npm install --location=local
 - npm install express ejs passport express-session cookie-parser // Login 
 - npm install passport-local       // Login
-- npm i bcryptjs // Encriptar contraseña
+- npm i bcrypt // Encriptar contraseña
 - npm i nodemon -D // Para que me tome los cambios cuando tengo el server andando
 - Create the `database.sqlite` file inside the `src/database` folder.
 - npm run typeorm migration:run

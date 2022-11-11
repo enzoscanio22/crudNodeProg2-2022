@@ -6,6 +6,8 @@ import { router } from "./routes";
 import "./database";
 import { getCustomRepository } from "typeorm";
 import { UsersRepository } from "./repositories/UsersRepository";
+const bcrypt=require("bcrypt")
+
 
 
 const app = express();
@@ -36,7 +38,7 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "..", "views"));
 
-app.listen(3000, () => {
+app.listen(8000, () => {
   console.log("La aplicación ha sido levantada con éxito. Server en el puerto ${PORT}. http://localhost:3000/");
 });
 
@@ -78,13 +80,14 @@ app.get('/',(req,res)=>{
   })
 
 app.post('/login',async(req,res)=>{
+  console.log(req.body.nombreUsuario)
   const eMail= req.body.nombreUsuario
   const contraseña= req.body.contraseña
   const usersRepository = getCustomRepository(UsersRepository);
-  const eMailAlreadyExists = await usersRepository.findOne({ eMail });
-  const contraseñaAlreadyExists = await usersRepository.findOne({ contraseña });
-  if (eMailAlreadyExists && contraseñaAlreadyExists){
-    res.render("index",{eMail:eMailAlreadyExists})
+  const user = await usersRepository.findOne({ eMail });
+  const passwordIsValid = bcrypt.compare(contraseña, user.contraseña);
+  if (passwordIsValid){
+    res.render("index",{eMail:user})
   }else{
     res.render("login")
   }
